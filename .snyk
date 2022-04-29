@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.22.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-MARKED-174116:
@@ -10,17 +10,43 @@ ignore:
     - enquirer > set-value:
         reason: CLI internal tool only
         expires: '2019-08-10T12:24:42.204Z'
-      prompt-confirm > prompt-base > prompt-question > prompt-choices > set-value:
-        reason: None given
-        expires: '2019-08-10T12:28:27.657Z'
     - enquirer > prompt-question > prompt-choices > set-value:
         reason: CLI internal tool only
         expires: '2019-08-10T12:24:42.204Z'
     - enquirer > prompt-input > prompt-base > prompt-question > prompt-choices > set-value:
         reason: CLI internal tool only
         expires: '2019-08-10T12:24:42.204Z'
+    - prompt-confirm > prompt-base > prompt-question > prompt-choices > set-value:
+        reason: None given
+        expires: '2019-08-10T12:28:27.657Z'
   SNYK-JS-MARKED-451540:
     - markdown2confluence-cws > marked:
         reason: None given
         expires: '2019-08-10T12:24:42.204Z'
-patch: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - snyk > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - request-promise-native > request-promise-core > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - snyk > inquirer > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - snyk > snyk-config > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2022-04-29T20:07:45.121Z'
